@@ -1,0 +1,18 @@
+@use "variables";
+body {
+    font-family: Montserrat, sans-serif;
+    background-color: variables.$background-primary;
+    color: variables.$text-primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    &.fixed{
+        overflow: hidden;
+    }
+}
+
+h1 {
+    font-size: variables.$h1-font-size;
+}

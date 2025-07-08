@@ -1,0 +1,134 @@
+@use "variables";
+.modal{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  z-index: 5;
+  &.active{
+    display: block;
+  }
+  &__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  &__wrapper{
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    left: 50%;
+    width: calc(100% - 40px);
+    max-width: 600px;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    background: variables.$background-secondary;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+    overflow: scroll;
+    max-height: 100dvh;
+  }
+  &__close{
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    width: 30px;
+    height: 30px;
+    span{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 18px;
+      border-radius: 6px;
+      background: variables.$accent-tertiary;
+      height: 2px;
+      transition: background linear 0.3s;
+      &:first-child{
+        transform: translate(-50%,-50%) rotate(45deg);
+      }
+      &:last-child{
+        transform: translate(-50%,-50%) rotate(-45deg);
+      }
+    }
+  }
+  &__image{
+    width: auto;
+    height: auto;
+    max-width: 170px;
+    aspect-ratio: 0.8333 / 1;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &__info{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__title{
+    font-weight: 600;
+    font-size: variables.$h2-font-size;
+    line-height: 1.333em;
+  }
+  &__text{
+    color: variables.$text-secondary;
+    font-size: 15px;
+    line-height: 1.333em;
+  }
+  &__btn{
+    width: fit-content;
+    padding: 20px 32.5px;
+    color: variables.$background-secondary;
+    background: variables.$accent-primary;
+    transition: background linear 0.3s;
+    border-radius: 8px;
+  }
+  @media(hover:hover){
+    &__close:hover{
+      span{
+        background: variables.$accent-primary;
+      }
+    }
+    &__btn:hover{
+      background:  variables.$accent-done;
+    }
+  }
+  @media(max-width:700px){
+    &__wrapper{
+      padding: 16px;
+    }
+    &__close{
+      width: 24px;
+      height: 24px;
+      top: 16px;
+      right: 16px;
+      span{
+        width: 12px;
+      }
+    }
+    &__image{
+      max-width: 36.111vw;
+      width: 80%;
+    }
+    &__text{
+      font-size: 16px;
+    }
+    &__btn{
+      width: 100%;
+
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "td-technical-task-layout-designer",
+  "version": "1.0.0",
+  "description": "Набор файлов для выполнения технического задания на должность верстальщика",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "gh-pages": "^6.3.0",
+    "browser-sync": "^3.0.3",
+    "gulp": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.80.2"
+  }
+}
