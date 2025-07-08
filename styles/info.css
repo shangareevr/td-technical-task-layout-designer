@@ -1,0 +1,39 @@
+.info__list {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
+.info__item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #a2a0a0;
+}
+.info__title {
+  font-size: 12px;
+}
+.info__text {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2em;
+}
+.info__text.active {
+  font-weight: 600;
+  color: #000000;
+}
+@media (max-width: 700px) {
+  .info__list {
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  .info__item {
+    flex-shrink: 0;
+    gap: 2px;
+  }
+  .info__title {
+    font-size: 8px;
+  }
+  .info__text {
+    font-size: 12px;
+  }
+}
